@@ -1,9 +1,19 @@
 import './styles/_main.scss';
 
+import DateSettings from "./container/DateSettings";
+import DateResult from "./container/DateResult";
+import DateFooter from "./container/DateFooter";
+
 function App() {
 
-  return <h1>first commit</h1>;
-  
+  return (
+    <>
+      <DateSettings />
+      <DateResult />
+      <DateFooter />
+    </>
+  );
+
 }
 
 export default App
