@@ -1,4 +1,4 @@
-import './styles/_main.scss';
+import "./sass/main.scss";
 
 import DateSettings from "./container/DateSettings";
 import DateResult from "./container/DateResult";
@@ -8,8 +8,10 @@ function App() {
 
   return (
     <>
-      <DateSettings />
-      <DateResult />
+      <main className="main">
+        <DateSettings />
+        <DateResult />
+      </main>
       <DateFooter />
     </>
   );

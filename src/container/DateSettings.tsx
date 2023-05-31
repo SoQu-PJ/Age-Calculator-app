@@ -1,12 +1,14 @@
 const DateSettings = () => {
     return (
         <section className="date-settings">
-            <label htmlFor="date">Day</label>
-            <input type="date" name="date" id="date" />
-            <label htmlFor="month">Month</label>
-            <input type="month" name="month" id="month" />
-            <label htmlFor="year">Year</label>
-            <input type="date" name="year" id="year" />
+            <label htmlFor="days">Day</label>
+            <input type="number" name="days" id="days" />
+
+            <label htmlFor="months">Month</label>
+            <input type="number" name="months" id="months" />
+
+            <label htmlFor="years">Year</label>
+            <input type="number" name="years" id="years" />
         </section>
     )
 }
