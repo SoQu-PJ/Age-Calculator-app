@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <main className="main">
+      <main className="data-main">
         <DateSettings />
         <DateResult />
       </main>
