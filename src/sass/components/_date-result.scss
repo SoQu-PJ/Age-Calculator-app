@@ -1,0 +1,21 @@
+.date-result{
+    width: calc(100% - 4rem);
+    padding: 2rem 2rem 3rem 2rem;
+
+    .date{
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 3.5rem;
+        text-align: left;
+        line-height: 4rem;
+
+        .cal-result{
+            color: $cal-result-color;
+            font-size: 4rem;
+
+
+        }
+    }
+}
