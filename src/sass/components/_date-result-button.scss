@@ -1,0 +1,26 @@
+.date-button-section{
+    position: relative;
+    width: calc(100% - 1rem);
+    padding: 1rem 0.5rem 0 0.5rem;
+
+    #date-result-button{
+        background-color: $date-result-button-bg-color;
+
+        padding: 1rem;
+
+        border-radius: 50%;
+        border: 0;
+        z-index: 1;      
+    }
+
+    hr{
+        position: absolute;
+        height: 3px;
+        width: 80%;
+
+        border: 0;
+
+        background-color: $date-result-button-hr-bg-color;
+        border-radius: 10px;
+    }
+}

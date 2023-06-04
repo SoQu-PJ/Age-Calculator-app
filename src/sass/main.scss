@@ -6,11 +6,13 @@
         "./base/typography";
 
 // import utils file
-@import "./utils/variables";
+@import "./utils/variables",
+        "./utils/placeholder";
 
 // import components file
 @import "./components/body",
         "./components/date-main",
         "./components/date-settings",
+        "./components/date-result-button",
         "./components/date-result";
 
