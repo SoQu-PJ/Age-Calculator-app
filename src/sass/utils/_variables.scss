@@ -16,12 +16,22 @@ $body-bg-color: $off-white;
 $data-main-bg-color: $white;
 $data-fieldset-input-border-color: $light-grey;
 $data-fieldset-label-color: $smokey-grey;
+$data-fieldset-input-hover-border-color: $purple;
 
 // DateResultButton
 
 $date-result-button-bg-color: $purple;
+$date-result-button-bg-hover-color: $off-black;
 $date-result-button-hr-bg-color: $off-white;
 
 // DateResult
 
 $cal-result-color: $purple;
+
+
+// RWD
+
+$breakpoints: (
+    'small': (min-width: 375px),
+    'large': (min-width: 1440px)
+)

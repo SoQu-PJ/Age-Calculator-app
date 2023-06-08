@@ -1,7 +1,7 @@
 .date-button-section{
     position: relative;
     width: calc(100% - 1rem);
-    padding: 1rem 0.5rem 0 0.5rem;
+    padding: 1rem .5rem 0 .5rem;
 
     #date-result-button{
         background-color: $date-result-button-bg-color;
@@ -11,6 +11,11 @@
         border-radius: 50%;
         border: 0;
         z-index: 1;      
+        transition: .2s ease-in;
+    }
+    #date-result-button:hover{
+        background-color: $date-result-button-bg-hover-color;
+        transform: scale(1.1) translate(0, -.5rem);
     }
 
     hr{
@@ -22,5 +27,20 @@
 
         background-color: $date-result-button-hr-bg-color;
         border-radius: 10px;
+    }
+
+    // RWD
+
+    @include respond-to('large'){
+        width: 45vw;
+        padding: 0 3rem;
+
+        #date-result-button{
+            padding: 1.3rem;
+        }
+
+        hr{
+            width: calc(95% - 3rem);
+        }
     }
 }

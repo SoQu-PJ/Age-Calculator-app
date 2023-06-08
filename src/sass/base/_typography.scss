@@ -20,6 +20,10 @@ body{
 
 .date-button-section{
     @extend %center-flex;
+
+    @include respond-to('large'){
+        justify-content: flex-end;
+    }
 }
 
 // DateResult

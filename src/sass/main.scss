@@ -1,13 +1,15 @@
 // import font - Poppins || Weights: 400i/700/800i
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
 
+// import utils file
+@import "./utils/variables",
+        "./utils/placeholder",
+        "./utils/mixins";
+        
 // import base file
 @import "./base/reset",
         "./base/typography";
 
-// import utils file
-@import "./utils/variables",
-        "./utils/placeholder";
 
 // import components file
 @import "./components/body",
