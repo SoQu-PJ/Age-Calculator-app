@@ -46,3 +46,7 @@
         transform: scale(1.01) translate(0, .1rem);
     }
 }
+
+.data-fieldset-wrong{
+    border: 2px solid $data-fieldset-wrong-input-border-color !important;
+}
