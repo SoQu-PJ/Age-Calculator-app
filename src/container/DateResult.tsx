@@ -1,11 +1,11 @@
 import { IDateResult } from "../ts/interface/IDateResult";
 
-const DateResult = ({ day, month, year }: IDateResult) => {
+const DateResult = ({ calculatedDay, calculatedMonth, calculatedYear }: IDateResult) => {
     return (
         <section className='date-result'>
-            <p id="year" className="date"><span className="cal-result">{day}</span> years</p>
-            <p id="month" className="date"><span className="cal-result">{month}</span> months</p>
-            <p id="day" className="date"><span className="cal-result">{year}</span> days</p>
+            <p id="year" className="date"><span className="cal-result">{calculatedYear}</span> years</p>
+            <p id="month" className="date"><span className="cal-result">{calculatedMonth}</span> months</p>
+            <p id="day" className="date"><span className="cal-result">{calculatedDay}</span> days</p>
         </section>
     )
 }

@@ -1,5 +1,5 @@
 export interface IDateResult {
-    day: number;
-    month: number;
-    year: number;
+    calculatedDay: number | null;
+    calculatedMonth: number | null;
+    calculatedYear: number | null;
 }

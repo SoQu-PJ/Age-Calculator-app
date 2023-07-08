@@ -1,25 +1,41 @@
 import DateResultButton from "./DateResultButton";
 import { IDateSettings } from "../ts/interface/IDateSettings";
 import { useState } from "react";
-// import useDateValid from "../hook/useDateValid";
+import useDateDifference from "../hook/useDateDifference";
+
+import isDateValid from "../ts/utils/isDateValid";
+
 
 const DateSettings = ({
-    day,
-    month,
-    year,
-    setDay,
-    setMonth,
-    setYear
+    setCalculatedDay,
+    setCalculatedMonth,
+    setCalculatedYear
 }: IDateSettings) => {
     const date = new Date();
-    const [wrongDate] = useState(false);
+
+    const [day, setDay] = useState<number>(0);
+    const [month, setMonth] = useState<number>(0);
+    const [year, setYear] = useState<number>(0);
+
+    const [wrongDate, setWrongDate] = useState<boolean | null>(null);
+    const { days, months, years } = useDateDifference(new Date(year, month, day), date);
+
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
+
+        if (isDateValid(day, month, year)) {
+            setWrongDate(false);
+            setCalculatedDay(days);
+            setCalculatedMonth(months);
+            setCalculatedYear(years)
+        } else
+            setWrongDate(true);
+
         e.preventDefault();
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} noValidate>
             <section className="date-settings">
                 <fieldset className="data-fieldset">
                     <label htmlFor="days">Day</label>

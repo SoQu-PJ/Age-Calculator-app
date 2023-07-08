@@ -7,25 +7,22 @@ import DateFooter from "./container/DateFooter";
 
 function App() {
 
-  const [day, setDay] = useState<number>(0);
-  const [month, setMonth] = useState<number>(0);
-  const [year, setYear] = useState<number>(0);
+  const [calculatedDay, setCalculatedDay] = useState<number | null>(null);
+  const [calculatedMonth, setCalculatedMonth] = useState<number | null>(null);
+  const [calculatedYear, setCalculatedYear] = useState<number | null>(null);
 
   return (
     <>
       <main className="data-main">
         <DateSettings
-          day={day}
-          month={month}
-          year={year}
-          setDay={setDay}
-          setMonth={setMonth}
-          setYear={setYear}
+          setCalculatedDay={setCalculatedDay}
+          setCalculatedMonth={setCalculatedMonth}
+          setCalculatedYear={setCalculatedYear}
         />
         <DateResult
-          day={day}
-          month={month}
-          year={year}
+          calculatedDay={calculatedDay}
+          calculatedMonth={calculatedMonth}
+          calculatedYear={calculatedYear}
         />
       </main>
       <DateFooter />
@@ -35,3 +32,5 @@ function App() {
 }
 
 export default App
+
+
