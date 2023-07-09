@@ -1,10 +1,9 @@
 import DateResultButton from "./DateResultButton";
 import { IDateSettings } from "../ts/interface/IDateSettings";
 import { useState } from "react";
-import useDateDifference from "../hook/useDateDifference";
+import useCalculateAge from "../hook/useDateDifference";
 
-import isDateValid from "../ts/utils/isDateValid";
-
+import isDateValid from "../ts/components/isDateValid";
 
 const DateSettings = ({
     setCalculatedDay,
@@ -18,7 +17,7 @@ const DateSettings = ({
     const [year, setYear] = useState<number>(0);
 
     const [wrongDate, setWrongDate] = useState<boolean | null>(null);
-    const { days, months, years } = useDateDifference(new Date(year, month, day), date);
+    const [years, months, days] = useCalculateAge(new Date(year, month - 1, day));
 
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
@@ -38,16 +37,37 @@ const DateSettings = ({
         <form onSubmit={handleSubmit} noValidate>
             <section className="date-settings">
                 <fieldset className="data-fieldset">
-                    <label htmlFor="days">Day</label>
-                    <input className={wrongDate ? "data-fieldset-wrong" : ""} type="number" name="days" id="days" placeholder="DD" min={1} max={31} value={day === 0 ? "" : day} onChange={(e) => setDay(parseInt(e.target.value))} />
+                    <label className={wrongDate ? "data-fieldset-label-wrong" : ""} htmlFor="days">Day</label>
+                    <input className={wrongDate ? "data-fieldset-input-wrong" : ""}
+                        type="number"
+                        name="days"
+                        id="days"
+                        placeholder="DD"
+                        min={1} max={31}
+                        value={day === 0 ? "" : day}
+                        onChange={(e) => setDay(parseInt(e.target.value))} />
                 </fieldset>
                 <fieldset className="data-fieldset">
-                    <label htmlFor="months">Month</label>
-                    <input className={wrongDate ? "data-fieldset-wrong" : ""} type="number" name="months" id="months" placeholder="MM" min={1} max={12} value={month === 0 ? "" : month} onChange={(e) => setMonth(parseInt(e.target.value))} />
+                    <label className={wrongDate ? "data-fieldset-label-wrong" : ""} htmlFor="months">Month</label>
+                    <input className={wrongDate ? "data-fieldset-input-wrong" : ""}
+                        type="number"
+                        name="months"
+                        id="months"
+                        placeholder="MM"
+                        min={1} max={12}
+                        value={month === 0 ? "" : month}
+                        onChange={(e) => setMonth(parseInt(e.target.value))} />
                 </fieldset>
                 <fieldset className="data-fieldset">
-                    <label htmlFor="years">Year</label>
-                    <input className={wrongDate ? "data-fieldset-wrong" : ""} type="number" name="years" id="years" placeholder="YYYY" min={1} max={date.getFullYear()} value={year === 0 ? "" : year} onChange={(e) => setYear(parseInt(e.target.value))} />
+                    <label className={wrongDate ? "data-fieldset-label-wrong" : ""} htmlFor="years">Year</label>
+                    <input className={wrongDate ? "data-fieldset-input-wrong" : ""}
+                        type="number"
+                        name="years"
+                        id="years"
+                        placeholder="YYYY"
+                        min={1} max={date.getFullYear()}
+                        value={year === 0 ? "" : year}
+                        onChange={(e) => setYear(parseInt(e.target.value))} />
                 </fieldset>
             </section>
             <DateResultButton />
