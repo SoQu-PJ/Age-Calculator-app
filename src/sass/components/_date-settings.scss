@@ -47,6 +47,9 @@
     }
 }
 
-.data-fieldset-wrong{
+.data-fieldset-input-wrong{
     border: 2px solid $data-fieldset-wrong-input-border-color !important;
+}
+.data-fieldset-label-wrong{
+    color: $data-fieldset-wrong-label-color !important;
 }

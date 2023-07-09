@@ -17,6 +17,9 @@
         background-color: $date-result-button-bg-hover-color;
         transform: scale(1.1) translate(0, -.5rem);
     }
+    #date-result-button:focus{
+        transform: scale(1.1) translate(0, -.5rem);
+    }
 
     hr{
         position: absolute;
