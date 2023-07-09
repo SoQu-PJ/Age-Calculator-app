@@ -1,7 +1,8 @@
 function isDateValid(day: number | null, month: number | null, year: number | null): boolean {
     if (day === null || month === null || year === null) {
         return false;
-    }
+    } else if (year > new Date().getFullYear())
+        return false;
 
     const date = new Date(year, month - 1, day);
 
